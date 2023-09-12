@@ -1,0 +1,10 @@
+{
+  "workbench.sideBar.location": "right",
+  "workbench.statusBar.visible": true,
+  "workbench.tips.enabled": true,
+  "breadcrumbs.enabled": true,
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.preferredDarkColorTheme": "Visual Studio Dark",
+  "workbench.preferredHighContrastColorTheme": "Default Dark Modern",
+  "workbench.preferredHighContrastLightColorTheme": "Default Dark Modern"
+}
