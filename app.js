@@ -39,6 +39,7 @@ const loginRoute = require("./routes/login");
 const signupRoute = require("./routes/signup");
 const subscribeRoute = require("./routes/subscribe");
 const userRoute = require("./routes/user");
+const paymentRoute = require("./routes/payment");
 
 // api route configurations
 app.use(
@@ -62,6 +63,8 @@ app.use(
 );
 app.use("/api/subscribe", subscribeRoute);
 app.use("/api/users", userRoute);
+
+app.use("api/pay", paymentRoute);
 
 // api listening only when the database is fully connected...
 mongoose
