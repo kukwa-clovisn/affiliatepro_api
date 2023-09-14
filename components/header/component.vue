@@ -5,7 +5,7 @@
         <i class="fa-solid fa-align-left"></i>
       </button>
       <div class="left-header">
-        <h2>Biscam investment sarl dashboard</h2>
+        <h2>AffiliatePro</h2>
       </div>
       <div class="right-header">
         <header-nav />

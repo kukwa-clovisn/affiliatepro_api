@@ -36,7 +36,7 @@
 .signin-container {
   width: 100%;
   height: fit-content;
-
+  background: rgb(234, 246, 236);
   .signin-wrapper {
     width: 100%;
     height: fit-content;
@@ -101,7 +101,7 @@
           height: 50px;
           border-radius: 3px;
           border: none;
-          background: rgb(10, 51, 89);
+          background: rgb(37, 97, 89);
           color: white;
         }
 

@@ -1,8 +1,6 @@
 <template>
   <div class="menu-logo-container">
-    <div class="img" @click="navigateTo('/')">
-      <img src="favicon.ico" alt="" />
-    </div>
+    <div class="img" @click="navigateTo('/')">affiliate <span>pro</span></div>
     <hr />
   </div>
 </template>
@@ -28,12 +26,21 @@
       width: auto;
       cursor: pointer;
     }
+
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    font-family: "Grand Hotel", cursive;
+
+    span {
+      color: rgb(255, 128, 0);
+      font-family: inherit;
+    }
   }
 
   hr {
     width: 70%;
-
-    border: 1px solid rgba(11, 54, 83, 0.541);
+    height: 2px;
+    background: rgb(243, 111, 3);
   }
 }
 </style>

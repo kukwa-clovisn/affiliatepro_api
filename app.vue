@@ -12,9 +12,6 @@
       <div class="page-content">
         <NuxtPage />
       </div>
-      <div class="page-footer">
-        <NuxtLayout name="page-footer" />
-      </div>
     </div>
   </main>
 </template>
@@ -78,6 +75,7 @@ body,
 body {
   padding: 0;
   margin: 0;
+  background: rgb(234, 246, 236);
 }
 
 html {
@@ -95,8 +93,7 @@ main {
   // display: flex;
   // justify-content: space-between;
   // align-items: flex-start;
-  background: rgb(240, 240, 240);
-  background: rgb(255, 255, 255);
+  background: rgb(234, 246, 236);
 
   .sm-media {
     display: none;
@@ -120,10 +117,6 @@ main {
     .page-content {
       width: 100%;
       height: fit-content;
-    }
-    .page-footer {
-      width: 100%;
-      height: 8vh;
     }
   }
   .main-component.lg {

@@ -9,8 +9,8 @@
             </button>
           </div>
           <div class="label">
-            <h3>website visits</h3>
-            <p>200</p>
+            <h3>Enrolled courses</h3>
+            <p>2</p>
           </div>
         </div>
 
@@ -27,8 +27,8 @@
             </button>
           </div>
           <div class="label">
-            <h3>appointment</h3>
-            <p>100%</p>
+            <h3>Active courses</h3>
+            <p>0</p>
           </div>
         </div>
 
@@ -45,45 +45,11 @@
             </button>
           </div>
           <div class="label">
-            <h3>messages</h3>
-            <p>34</p>
+            <h3>completed courses</h3>
+            <p>2</p>
           </div>
         </div>
 
-        <div class="content-percentage">
-          <hr />
-          <p><span>+3%</span> 10 today</p>
-        </div>
-      </div>
-      <div class="content">
-        <div class="content-wrapper">
-          <div class="cover">
-            <button class="second">
-              <i class="fa-brands fa-product-hunt"></i>
-            </button>
-          </div>
-          <div class="label">
-            <h3>products</h3>
-            <p>{{ response.length }}</p>
-          </div>
-        </div>
-        <div class="content-percentage">
-          <hr />
-          <p><span>+3%</span> 10 today</p>
-        </div>
-      </div>
-      <div class="content">
-        <div class="content-wrapper">
-          <div class="cover">
-            <button>
-              <i class="fa-solid fa-plane-circle-check"></i>
-            </button>
-          </div>
-          <div class="label">
-            <h3>flight</h3>
-            <p>100%</p>
-          </div>
-        </div>
         <div class="content-percentage">
           <hr />
           <p><span>+3%</span> 10 today</p>
@@ -119,9 +85,10 @@ onBeforeMount(() => {
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
+    padding: 20px 0;
 
     .content {
-      width: 160px;
+      width: 200px;
       height: 110px;
       background: white;
       border-radius: 3px;

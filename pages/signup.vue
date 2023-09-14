@@ -11,7 +11,7 @@
       </div>
       <div class="signin-form">
         <div class="form-wrapper">
-          <div class="input">
+          <div :class="[{ error: status.username }, 'input']">
             <label for="name">Enter Full Name:</label>
             <input
               type="text"
@@ -20,17 +20,14 @@
               placeholder="Ener Full Name..."
             />
             <div class="input-status">
-              <div class="check-success" v-if="checkStatus.success">
-                <i class="fa-regular fa-circle-check"></i> <span>valid</span>
-              </div>
-              <div class="check-error" v-if="checkStatus.error">
+              <div class="check-error" v-if="status.username">
                 <i class="fa-solid fa-circle-xmark"></i>
-                <span>invalid </span>
+                <span>invalid credentials... </span>
               </div>
             </div>
           </div>
-          <div class="input">
-            <label for="email">Email address:</label
+          <div :class="[{ error: status.email }, 'input']">
+            <label for="email">Enter Email address:</label
             ><input
               id="email"
               type="email"
@@ -40,17 +37,14 @@
               placeholder="Enter Email address..."
             />
             <div class="input-status">
-              <div class="check-success" v-if="checkStatus.success">
-                <i class="fa-regular fa-circle-check"></i> <span>valid</span>
-              </div>
-              <div class="check-error" v-if="checkStatus.error">
+              <div class="check-error" v-if="status.email">
                 <i class="fa-solid fa-circle-xmark"></i>
-                <span>invalid </span>
+                <span>invalid credentials... </span>
               </div>
             </div>
           </div>
-          <div class="input">
-            <label for="password">password:</label
+          <div :class="[{ error: status.password }, 'input']">
+            <label for="password">Enter password:</label
             ><input
               id="password"
               type="password"
@@ -58,12 +52,9 @@
               placeholder="Enter password..."
             />
             <div class="input-status">
-              <div class="check-success" v-if="checkStatus.success">
-                <i class="fa-regular fa-circle-check"></i> <span>valid</span>
-              </div>
-              <div class="check-error" v-if="checkStatus.error">
+              <div class="check-error" v-if="status.password">
                 <i class="fa-solid fa-circle-xmark"></i>
-                <span>invalid </span>
+                <span>invalid credentials... </span>
               </div>
             </div>
           </div>
@@ -71,7 +62,7 @@
             signup
           </button>
           <div class="links">
-            <nuxtLink to="/signin "
+            <nuxtLink to="/signin"
               >Already have an account ? <span>signin</span>
             </nuxtLink>
             <nuxtLink to="/">Home</nuxtLink>
@@ -79,7 +70,6 @@
         </div>
       </div>
     </div>
-    <AlertSuccess />
   </div>
 </template>
 
@@ -88,31 +78,27 @@ import axios from "axios";
 
 const user = reactive({ username: "", email: "", password: "" });
 
-const checkStatus = reactive({
-  success: false,
-  error: false,
+const status = reactive({
+  username: false,
+  email: false,
+  password: false,
 });
 
 const signupFunc = (username, email, password) => {
-  checkStatus.success = false;
-  checkStatus.error = false;
-  if (username === "" || email === "" || password === "") {
-    checkStatus.error = true;
-    checkStatus.success = false;
-    return;
-  }
-  checkStatus.success = true;
-  checkStatus.error = false;
-  axios
-    .post("http://localhost:3003/api/signup", {
-      username,
-      email,
-      password,
-    })
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => console.log(err));
+  status.username = true ? username === "" : (status.username = false);
+  status.email = true ? email === "" : (status.email = false);
+  status.password = true ? password === "" : (status.password = false);
+
+  // axios
+  //   .post("http://localhost:3003/api/signup", {
+  //     username,
+  //     email,
+  //     password,
+  //   })
+  //   .then((res) => {
+  //     console.log(res);
+  //   })
+  //   .catch((err) => console.log(err));
 };
 </script>
 
@@ -121,6 +107,7 @@ const signupFunc = (username, email, password) => {
   width: 100%;
   height: fit-content;
 
+  background: rgb(234, 246, 236);
   .signin-wrapper {
     width: 100%;
     height: fit-content;
@@ -154,26 +141,30 @@ const signupFunc = (username, email, password) => {
       height: fit-content;
 
       .form-wrapper {
-        width: 350px;
+        width: 500px;
         height: fit-content;
         margin: 10px auto;
         padding: 20px 10px;
 
         .input {
           width: 100%;
-          height: 50px;
-          margin: 30px auto;
+          height: fit-content;
+          margin: 15px auto;
 
           label {
             text-transform: capitalize;
-            padding: 5px 0;
+            padding: 10px 0;
             font-weight: 500;
+            display: block;
           }
           input {
             width: 100%;
             height: 45px;
-            outline: none;
             padding: 0 17px;
+            border-radius: 2px;
+            border: none;
+            outline: 1px solid rgb(186, 185, 185);
+            box-shadow: 0 0 10px 1px rgb(170, 169, 169);
           }
 
           .input-status {
@@ -192,6 +183,7 @@ const signupFunc = (username, email, password) => {
               i {
                 font-size: 13px;
                 color: green;
+                font-weight: bolder;
               }
               span {
                 font-size: 13px;
@@ -202,9 +194,20 @@ const signupFunc = (username, email, password) => {
             .check-error {
               i,
               span {
-                color: red;
+                color: rgb(215, 22, 70);
               }
             }
+          }
+        }
+
+        .input.error {
+          label {
+            color: rgb(215, 22, 70);
+          }
+
+          input {
+            box-shadow: 0 0 10px 1px rgb(119, 89, 89);
+            outline: 3px solid rgb(215, 22, 70);
           }
         }
         button {
@@ -212,7 +215,7 @@ const signupFunc = (username, email, password) => {
           height: 50px;
           border-radius: 3px;
           border: none;
-          background: rgb(10, 51, 89);
+         background: rgb(37, 97, 89);
           color: white;
         }
 

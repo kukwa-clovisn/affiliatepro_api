@@ -45,24 +45,23 @@
 </template>
 
 <script setup>
-import axios from "axios";
+// import axios from "axios";
 const user = reactive({
   email: "",
   password: "",
 });
 
 const signinFunc = (email, password) => {
-  if (email === "" || password === "") {
-    alert("fill in input fields.");
-  }
+  navigateTo("/dashboard/");
 
-  axios
-    .post("http://localhost:3003/api/login", {
-      email,
-      password,
-    })
-    .then((res) => console.log(res))
-    .catch((err) => console.log(err));
+  console.log(email, password);
+  // axios
+  //   .post("http://localhost:3003/api/login", {
+  //     email,
+  //     password,
+  //   })
+  //   .then((res) => )
+  //   .catch((err) => console.log(err));
 };
 </script>
 
@@ -71,6 +70,7 @@ const signinFunc = (email, password) => {
   width: 100%;
   height: fit-content;
 
+  background: rgb(234, 246, 236);
   .signin-wrapper {
     width: 100%;
     height: fit-content;
@@ -82,7 +82,7 @@ const signinFunc = (email, password) => {
 
         .logo {
           width: fit-content;
-          margin: 10px auto;
+          margin: 0 auto;
 
           img {
             height: 140px;
@@ -104,7 +104,7 @@ const signinFunc = (email, password) => {
       height: fit-content;
 
       .form-wrapper {
-        width: 350px;
+        width: 500px;
         height: fit-content;
         margin: 10px auto;
         padding: 20px 10px;
@@ -112,11 +112,12 @@ const signinFunc = (email, password) => {
         .input {
           width: 100%;
           height: 50px;
-          margin: 30px auto;
+          margin: 40px auto;
 
           label {
             text-transform: capitalize;
             padding: 5px 0;
+            display: block;
             font-weight: 500;
           }
           input {
@@ -124,6 +125,9 @@ const signinFunc = (email, password) => {
             height: 45px;
             outline: none;
             padding: 0 17px;
+            border: none;
+            outline: none;
+            border: 1px solid rgb(215, 225, 223);
           }
 
           @media screen and (max-width: 768px) {
@@ -135,7 +139,7 @@ const signinFunc = (email, password) => {
           height: 50px;
           border-radius: 3px;
           border: none;
-          background: rgb(10, 51, 89);
+          background: rgb(37, 97, 89);
           color: white;
         }
 
@@ -156,7 +160,7 @@ const signinFunc = (email, password) => {
 
             span,
             &:last-child {
-              color: blue;
+              color: rgb(230, 139, 12);
             }
           }
         }

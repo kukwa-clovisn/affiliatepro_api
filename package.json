@@ -17,7 +17,6 @@
   "dependencies": {
     "@element-plus/nuxt": "^1.0.4",
     "aos": "^2.3.4",
-    "axios": "^1.4.0",
-    "vuelidate": "^0.7.7"
+    "axios": "^1.4.0"
   }
 }

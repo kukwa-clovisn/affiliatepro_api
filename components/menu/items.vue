@@ -1,29 +1,120 @@
 <template>
   <div class="menu-items-container">
     <div class="wrapper">
-      <NuxtLink to="/">
+      <button
+        @click="
+          ($event) => {
+            index = true;
+            profile = false;
+            enrolledCourse = false;
+            startCourse = false;
+            settings = false;
+            orderHistor = false;
+            wishlist = false;
+            allCourses = false;
+          }
+        "
+      >
         <i class="fa-solid fa-table-columns"></i>
-        <span>dashboard</span></NuxtLink
-      ><NuxtLink to="/create-product">
+        <span>dashboard</span>
+      </button>
+      <button
+        @click="
+          ($event) => {
+            profile = true;
+            index = false;
+            enrolledCourse = false;
+            startCourse = false;
+            settings = false;
+            orderHistor = false;
+            wishlist = false;
+            allCourses = false;
+          }
+        "
+      >
+        <i class="fa-solid fa-table-columns"></i>
+        <span>profile</span></button
+      ><button
+        @click="
+          ($event) => {
+            index = false;
+            profile = false;
+            enrolledCourse = false;
+            startCourse = true;
+            settings = false;
+            orderHistor = false;
+            wishlist = false;
+            allCourses = false;
+          }
+        "
+      >
         <i class="fa-solid fa-plus"></i>
-        <span>create product</span></NuxtLink
-      ><NuxtLink to="/view-product">
+        <span>start courses</span></button
+      ><button
+        @click="
+          ($event) => {
+            index = false;
+            profile = false;
+            enrolledCourse = false;
+            startCourse = false;
+            settings = false;
+            orderHistor = false;
+            wishlist = false;
+            allCourses = true;
+          }
+        "
+      >
         <i class="fa-solid fa-eye"></i>
-        <span>view products</span></NuxtLink
-      ><NuxtLink to="/engagement">
+        <span>my courses</span></button
+      ><button
+        @click="
+          ($event) => {
+            index = false;
+            profile = false;
+            enrolledCourse = false;
+            startCourse = false;
+            settings = true;
+            orderHistor = false;
+            wishlist = false;
+            allCourses = false;
+          }
+        "
+      >
         <i class="fa-solid fa-group-arrows-rotate"></i>
-        <span>engagements</span>
-      </NuxtLink>
-      <NuxtLink to="/engagement">
+        <span>settings</span>
+      </button>
+      <button
+        @click="
+          ($event) => {
+            index = false;
+            profile = false;
+            enrolledCourse = true;
+            startCourse = false;
+            settings = false;
+            orderHistor = false;
+            wishlist = false;
+            allCourses = false;
+          }
+        "
+      >
         <i class="fa-solid fa-bell"></i>
-        <span>notifications</span> </NuxtLink
-      ><NuxtLink to="/">
+        <span>enrolled courses</span></button
+      ><button @click="navigateTo('/')">
         <i class="fa-solid fa-group-arrows-rotate"></i>
         <span>sign out</span>
-      </NuxtLink>
+      </button>
     </div>
   </div>
 </template>
+<script setup>
+const index = dashboardIndex();
+const profile = dashboardProfile();
+// const EnrolledCourses = dashboardEnrolledCourses();
+const wishlist = dashboardWishList();
+const settings = dashboardSettings();
+const startCourse = dashboardStartCourse();
+const allCourses = dashboardAllCourses();
+</script>
 
 <style lang="scss" scoped>
 .menu-items-container {
@@ -40,7 +131,7 @@
     gap: 10px;
     padding-top: 25px;
 
-    a {
+    button {
       width: 90%;
       height: 45px;
       border-radius: 3px;
@@ -53,11 +144,12 @@
       align-items: center;
       gap: 20px;
       text-decoration: none;
+      color: white;
 
       i {
         width: 20%;
         font-size: 20px;
-        color: rgb(64, 64, 64);
+        color: rgb(255, 255, 255);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -66,7 +158,7 @@
       span {
         width: 80%;
         text-transform: capitalize;
-        color: rgb(57, 57, 57);
+        color: rgb(255, 255, 255);
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -80,29 +172,14 @@
           }
         }
       }
-
-      &:hover {
-        background: rgb(8, 74, 172);
-        box-shadow: 0 0 8px 5px rgb(235, 234, 234);
-
-        i,
-        span {
-          color: white;
-        }
-      }
     }
     a.router-link-active.router-link-exact-active,
     .router-link-active {
-      color: rgb(255, 255, 255);
+      color: rgb(249, 124, 21);
 
-      background: linear-gradient(
-        to bottom right,
-        rgb(8, 74, 172),
-        rgb(8, 34, 141)
-      );
       i,
       span {
-        color: white;
+        color: rgb(235, 114, 16);
       }
     }
   }

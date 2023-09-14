@@ -71,7 +71,7 @@ const toggleMenu = useMenuState();
 .menu-container {
   width: 100%;
   height: 100%;
-  background: white;
+  background: rgb(37, 97, 89);
   position: relative;
 
   .sm-media {
