@@ -7,6 +7,9 @@
       </div>
       <NuxtLayout name="page-footer" />
     </div>
+    <div class="menu-component" v-if="toggleMenu">
+      <MenuComponent />
+    </div>
   </main>
 </template>
 
@@ -95,6 +98,14 @@ main {
     .page-content {
       width: 100%;
       height: fit-content;
+    }
+  }
+
+  .menu-component {
+    display: none;
+
+    @media screen and (max-width: 900px) {
+      display: block;
     }
   }
 }
