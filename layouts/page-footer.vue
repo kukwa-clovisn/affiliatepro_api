@@ -12,7 +12,7 @@
         <div class="wrapper">
           <div class="link"><a href="/#about-container">about us</a></div>
           <div class="link"><a href="/#courses-container">courses</a></div>
-          <div class="link"><a href="#contacts">contacts</a></div>
+          <div class="link"><a href="#contact-container">contacts</a></div>
         </div>
       </div>
       <div class="contacts">contacts</div>

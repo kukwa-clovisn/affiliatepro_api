@@ -1,8 +1,13 @@
 <template>
   <div class="signin-container">
     <div class="signin-wrapper">
+      <div class="signin-img">
+        <img src="~/assets/login.png" alt="" />
+      </div>
+      <div class="signin-img-right">
+        <img src="~/assets/login.png" alt="" />
+      </div>
       <h1>sign in to affiliate market place</h1>
-
       <div class="signin-form">
         <div class="form-wrapper">
           <div class="input">
@@ -68,24 +73,68 @@ const signinFunc = (email, password) => {
   .signin-wrapper {
     width: 100%;
     height: fit-content;
-    padding-top:18vh;
+    padding-top: 18vh;
 
     h1 {
       text-transform: capitalize;
       text-align: center;
-      line-height: 80px;
-      padding: 20px;
+      line-height: 1.5em;
+      padding: 10px;
+      font-weight: 800;
+      position: relative;
+      width: 500px;
+      margin: 0 auto;
+
+      @media screen and (max-width: 600px) {
+        width: 80%;
+        text-align: left;
+        padding: 0;
+      }
+    }
+
+    .signin-img,
+    .signin-img-right {
+      width: fit-content;
+      height: fit-content;
+      position: absolute;
+      bottom: 15%;
+      left: 2%;
+
+      .blur-wrapper {
+        opacity: 0.3;
+      }
+
+      img {
+        width: 300px;
+        object-fit: contain;
+      }
+
+      @media screen and (max-width: 1050px) {
+        bottom: 15%;
+
+        img {
+          width: 200px;
+        }
+
+        @media screen and (max-width: 1000px) {
+          display: none;
+        }
+      }
+    }
+
+    .signin-img-right {
+      left: 75%;
     }
 
     .signin-form {
       width: 100%;
       height: fit-content;
-
+      position: relative;
       .form-wrapper {
         width: 500px;
         height: fit-content;
-        margin: 10px auto;
-        padding: 20px 10px;
+        margin: 0 auto;
+        padding: 10px;
 
         .input {
           width: 100%;
@@ -107,10 +156,6 @@ const signinFunc = (email, password) => {
             outline: none;
             border: 1px solid rgb(215, 225, 223);
           }
-
-          @media screen and (max-width: 768px) {
-            width: 50vw;
-          }
         }
         button {
           width: 100%;
@@ -123,15 +168,20 @@ const signinFunc = (email, password) => {
 
         .links {
           width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 5px 10px;
 
           a {
-            width: 100%;
+            width: fit-content;
             text-align: left;
             text-transform: capitalize;
             text-decoration: none;
             color: black;
             font-size: 12px;
-            padding: 5px 0;
+            padding: 10px 0;
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -142,11 +192,10 @@ const signinFunc = (email, password) => {
             }
           }
         }
-      }
 
-      @media screen and (max-width: 768px) {
-        width: 50vw;
-        margin: 10px auto;
+        @media screen and (max-width: 600px) {
+          width: 80%;
+        }
       }
     }
   }

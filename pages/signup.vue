@@ -1,12 +1,13 @@
 <template>
   <div class="signin-container">
     <div class="signin-wrapper">
+      <div class="signup-img"><img src="~/assets/sign-up.png" alt="" /></div>
       <h1>signup to affiliate market place</h1>
 
       <div class="signin-form">
         <div class="form-wrapper">
           <div :class="[{ error: status.username }, 'input']">
-            <label for="name">Enter Full Name:</label>
+            <label for="name"> Full Name:</label>
             <input
               type="text"
               id="name"
@@ -21,7 +22,7 @@
             </div>
           </div>
           <div :class="[{ error: status.email }, 'input']">
-            <label for="email">Enter Email address:</label
+            <label for="email"> Email address:</label
             ><input
               id="email"
               type="email"
@@ -38,7 +39,7 @@
             </div>
           </div>
           <div :class="[{ error: status.password }, 'input']">
-            <label for="password">Enter password:</label
+            <label for="password"> password:</label
             ><input
               id="password"
               type="password"
@@ -53,7 +54,7 @@
             </div>
           </div>
           <button @click="signupFunc(user.username, user.email, user.password)">
-            signup
+            create account
           </button>
           <div class="links">
             <nuxtLink to="/signin"
@@ -106,22 +107,43 @@ const signupFunc = (username, email, password) => {
     width: 100%;
     height: fit-content;
     padding-top: 18vh;
+    position: relative;
+    .signup-img {
+      position: absolute;
+      bottom: 10%;
+      right: 1%;
+
+      img {
+        width: 400px;
+        object-fit: contain;
+      }
+    }
     h1 {
       text-transform: capitalize;
       text-align: center;
-      line-height: 80px;
-      padding: 20px;
+      line-height: 1.5em;
+      padding: 10px;
+      font-weight: 800;
+      position: relative;
+      width: 500px;
+      margin: 0 auto;
+
+      @media screen and (max-width: 600px) {
+        width: 80%;
+        text-align: left;
+        padding: 0;
+      }
     }
 
     .signin-form {
       width: 100%;
       height: fit-content;
-
+      position: relative;
       .form-wrapper {
         width: 500px;
         height: fit-content;
-        margin: 10px auto;
-        padding: 20px 10px;
+        margin: 0 auto;
+        padding: 10px;
 
         .input {
           width: 100%;
@@ -133,6 +155,8 @@ const signupFunc = (username, email, password) => {
             padding: 10px 0;
             font-weight: 500;
             display: block;
+            font-weight: 500;
+            font-size: 18px;
           }
           input {
             width: 100%;
@@ -201,13 +225,15 @@ const signupFunc = (username, email, password) => {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          gap: 10px;
+          flex-wrap: wrap;
 
           a {
             width: max-content;
             text-align: left;
             text-transform: capitalize;
             text-decoration: none;
-            color: black;
+
             font-size: 12px;
             padding: 5px 0;
             display: flex;
@@ -215,13 +241,17 @@ const signupFunc = (username, email, password) => {
             align-items: center;
 
             span {
-              color: blue;
+              color: rgb(218, 68, 18);
             }
 
             &:last-child {
-              color: blue;
+              color: rgb(218, 68, 18);
             }
           }
+        }
+
+        @media screen and (max-width: 600px) {
+          width: 80%;
         }
       }
     }

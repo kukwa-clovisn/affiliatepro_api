@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div :class="[{ lg: !toggleMenu }, 'main-component']">
+    <div class="main-component">
       <NuxtLayout name="page-header" />
       <div class="page-content">
         <NuxtPage />
@@ -12,7 +12,7 @@
 
 <script setup>
 useHead({
-  title: "affiliate marketting ",
+  title: "AffiliatePro ",
   viewport: "width:device-width, initial-scale=1",
   charset: "utf-8",
   meta: [
@@ -54,6 +54,7 @@ const toggleMenu = useMenuState();
 body,
 * {
   box-sizing: border-box;
+  color: rgb(31, 32, 33);
 }
 
 .blur-wrapper {
@@ -73,65 +74,27 @@ body {
 }
 
 html {
-  padding: 0;
-  margin: 0;
   scroll-behavior: smooth;
 }
 
 main {
   width: 100vw;
-  height: 100vh;
+  height: fit-content;
   padding: 0;
   margin: 0;
-  // overflow: hidden;
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: flex-start;
   background: rgb(234, 246, 236);
 
   .sm-media {
     display: none;
   }
 
-  .menu-dashboard {
-    width: 20%;
-    height: 100%;
-    box-shadow: 3px 0 10px 8px rgb(240, 240, 240);
-    position: relative;
-  }
-  .menu-dashboard.active {
-    width: 5%;
-  }
-
   .main-component {
-    // width: 80%;
     width: 100%;
     height: fit-content;
 
     .page-content {
       width: 100%;
       height: fit-content;
-    }
-  }
-  .main-component.lg {
-    // width: 95%;
-    width: 100%;
-  }
-
-  @media screen and (max-width: 768px) {
-    .menu-dashboard.lg-media {
-      display: none;
-    }
-
-    .menu-dashboard.sm-media {
-      display: block;
-      width: 10%;
-    }
-    .menu-dashboard.active {
-      width: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
     }
   }
 }

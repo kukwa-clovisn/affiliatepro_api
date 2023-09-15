@@ -38,8 +38,8 @@
     h1 {
       text-transform: capitalize;
       text-align: center;
-      line-height: 80px;
-      padding: 20px;
+      line-height: 30px;
+      padding: 10px;
     }
 
     p {
@@ -93,17 +93,22 @@
             text-align: left;
             text-transform: capitalize;
             text-decoration: none;
-            color: black;
-            font-size: 12px;
-            padding: 5px 0;
+
+            font-size: 14px;
+            color: rgb(224, 81, 4);
+            padding: 10px 0;
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
 
-            &:last-child {
-              color: blue;
-            }
+            font-weight: 600;
           }
+        }
+
+        @media screen and (max-width: 450px) {
+          width: 85%;
         }
       }
     }

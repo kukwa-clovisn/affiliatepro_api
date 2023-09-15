@@ -19,7 +19,7 @@
         </button>
       </div>
       <div class="menu-div">
-        <button>
+        <button @click="toggleMenu = !toggleMenu">
           <i class="fa-solid fa-bars">ba</i>
         </button>
       </div>
@@ -33,6 +33,8 @@ if (process.client) {
     stickyHeader.value = true ? window.scrollY > 0 : false;
   });
 }
+
+const toggleMenu = useMenuState();
 </script>
 <style lang="scss" scoped>
 .header-component {
@@ -216,7 +218,7 @@ if (process.client) {
       border-radius: 0;
     }
   }
-  @media screen and (max-width: 678px) {
+  @media screen and (max-width: 768px) {
     padding-top: 0;
   }
 }
