@@ -1,15 +1,9 @@
 <template>
   <div class="signin-container">
     <div class="signin-wrapper">
-      <div class="signin-header">
-        <div class="header-wrapper">
-          <div class="logo">
-            <img src="favicon.ico" alt="" />
-          </div>
-        </div>
-        <h1>Forgot your password??</h1>
-        <p>Let us help you recover your account...</p>
-      </div>
+      <h1>Forgot your password??</h1>
+      <p>Let us help you recover your account...</p>
+
       <div class="signin-form">
         <div class="form-wrapper">
           <div class="input">
@@ -40,24 +34,7 @@
   .signin-wrapper {
     width: 100%;
     height: fit-content;
-
-    .signin-header {
-      width: 100%;
-      .header-wrapper {
-        width: 100%;
-
-        .logo {
-          width: fit-content;
-          margin: 10px auto;
-
-          img {
-            height: 140px;
-            width: auto;
-            cursor: pointer;
-          }
-        }
-      }
-    }
+    padding-top: 18vh;
     h1 {
       text-transform: capitalize;
       text-align: center;

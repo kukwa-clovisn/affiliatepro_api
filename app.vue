@@ -1,17 +1,11 @@
 <template>
   <main>
-    <!-- <div :class="[{ active: !toggleMenu }, 'menu-dashboard', 'lg-media']">
-      <menu-component />
-    </div>
-    <div :class="[{ active: toggleMenu }, 'menu-dashboard', 'sm-media']">
-      <div class="blur-wrapper"></div>
-      <menu-component />
-    </div> -->
     <div :class="[{ lg: !toggleMenu }, 'main-component']">
-      <!-- <NuxtLayout name="page-header" /> -->
+      <NuxtLayout name="page-header" />
       <div class="page-content">
         <NuxtPage />
       </div>
+      <NuxtLayout name="page-footer" />
     </div>
   </main>
 </template>
@@ -56,7 +50,7 @@ useHead({
 const toggleMenu = useMenuState();
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 body,
 * {
   box-sizing: border-box;

@@ -1,14 +1,8 @@
 <template>
   <div class="signin-container">
     <div class="signin-wrapper">
-      <div class="signin-header">
-        <div class="header-wrapper">
-          <div class="logo">
-            <img src="favicon.ico" alt="" />
-          </div>
-        </div>
-        <h1>signup to affiliate market place</h1>
-      </div>
+      <h1>signup to affiliate market place</h1>
+
       <div class="signin-form">
         <div class="form-wrapper">
           <div :class="[{ error: status.username }, 'input']">
@@ -111,24 +105,7 @@ const signupFunc = (username, email, password) => {
   .signin-wrapper {
     width: 100%;
     height: fit-content;
-
-    .signin-header {
-      width: 100%;
-      .header-wrapper {
-        width: 100%;
-
-        .logo {
-          width: fit-content;
-          margin: 10px auto;
-
-          img {
-            height: 140px;
-            width: auto;
-            cursor: pointer;
-          }
-        }
-      }
-    }
+    padding-top: 18vh;
     h1 {
       text-transform: capitalize;
       text-align: center;
@@ -215,7 +192,7 @@ const signupFunc = (username, email, password) => {
           height: 50px;
           border-radius: 3px;
           border: none;
-         background: rgb(37, 97, 89);
+          background: rgb(37, 97, 89);
           color: white;
         }
 

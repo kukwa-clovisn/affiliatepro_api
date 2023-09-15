@@ -53,6 +53,15 @@ hr {
       text-align: center;
       font-weight: bold;
       font-size: 40px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 30px;
+        width: 90%;
+        margin: 10px auto;
+        line-height: 1.5em;
+        padding: 20px 0;
+        box-sizing: border-box;
+      }
     }
 
     .content-wrapper {
@@ -62,7 +71,7 @@ hr {
       justify-content: space-evenly;
       align-items: flex-start;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 10px;
 
       .testimonial {
         width: 400px;
@@ -76,7 +85,7 @@ hr {
           width: 80px;
           height: 80px;
           border-radius: 100%;
-          outline: 3px solid rgb(12, 64, 106);
+          outline: 5px solid rgb(232, 98, 9);
           display: flex;
           justify-content: center;
           align-items: center;
@@ -101,6 +110,47 @@ hr {
             font-size: 16px;
             line-height: 23px;
           }
+        }
+
+        @media screen and (max-width: 900px) {
+          width: 80%;
+          height: fit-content;
+
+          .image {
+            width: 100px;
+            height: 100px;
+          }
+
+          .content-body {
+            width: 70%;
+          }
+
+          @media screen and (max-width: 650px) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            padding: 20px 10px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+
+            .content-body {
+              width: 90%;
+
+              h2,
+              p {
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 1000px) {
+        width: 90%;
+
+        @media screen and (max-width: 600px) {
+          width: 100%;
         }
       }
     }
