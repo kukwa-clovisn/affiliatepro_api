@@ -133,6 +133,7 @@
 
             i {
               padding-right: 6px;
+              color: white;
             }
 
             &:last-child {

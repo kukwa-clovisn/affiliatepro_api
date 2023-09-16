@@ -109,9 +109,9 @@ hr {
         height: fit-content;
 
         .img {
-          width: 80%;
+          width: 75%;
           height: 400px;
-          border-radius: 30%;
+          border-radius: 35% 0 35% 0;
           background: rgb(37, 97, 89);
           overflow: hidden;
           display: flex;
@@ -119,7 +119,7 @@ hr {
           align-items: center;
 
           img {
-            height: 90%;
+            height: 100%;
             width: auto;
           }
         }
@@ -170,6 +170,7 @@ hr {
 
             i {
               padding-right: 6px;
+              color: white;
             }
 
             a {

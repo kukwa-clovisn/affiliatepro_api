@@ -73,6 +73,8 @@ body,
 body {
   padding: 0;
   margin: 0;
+  overflow: hidden;
+  overflow-y: scroll;
   background: rgb(234, 246, 236);
 }
 
