@@ -1,41 +1,52 @@
-const { validationResult } = require("express-validator");
-const bcrypt = require("bcrypt");
 const userModel = require("../Database/models/users");
+
+const capitalizeUserName = require("../middlewares/capitalize");
+
+const userToken = require("../utils/jwt");
+
+const verifyToken = require("../middlewares/verifyHash");
+
+const jwt = require("jsonwebtoken");
+
 module.exports = {
   post: async (req, res) => {
     try {
-      const errors = validationResult(req);
+      // let findUserEmail = capitalizeUserName(req.body.username);
+      const findUserEmail = req.body.email;
 
-      if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-      }
-
-      const emailCheck = await userModel.findOne({ email: req.body.email });
-
-      if (!emailCheck)
-        return res.status(404).json({
-          msg: "User has no account.",
+      const data = await userModel.findOne({
+        email: findUserEmail,
+      });
+      // id the user is not logged in,
+      if (!data)
+        return res.status(403).json({
+          msg: `user ${findUserEmail} has no account.`,
         });
-      const enteredPassword = req.body.password; // Password entered by the user
-      const storedHashedPassword = emailCheck.password; // Retrieved from your database
 
-      bcrypt.compare(enteredPassword, storedHashedPassword, (err, result) => {
-        if (err) {
-          // Handle error
-          return res.status(500).json({ msg: "system error" });
-        } else if (result === true) {
-          // Passwords match
-          console.log("Password is correct");
-          return res.status(200).json({ msg: "login successful" });
-        } else {
-          // Passwords do not match
-          console.log("Password is incorrect");
-          return res.status(403).json({ msg: "unauthorized login" });
-        }
+      // if data, compare password,
+      const result = await verifyToken(
+        req.body.password,
+        data.password,
+        findUserEmail
+      );
+
+      if (!result)
+        return res.status(403).json({
+          msg: "unauthorized user. incorrect password",
+        });
+
+      let accessToken = userToken.createUserToken(req.body);
+
+      return res.status(200).json({
+        username: data.username,
+        email: data.email,
+        accessId: data._id,
+        msg: "Loading courses...",
+        accessToken,
       });
     } catch (error) {
       console.log(error);
-      return res.status(500);
+      return res.status(500).json({ error });
     }
   },
 };
