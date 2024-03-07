@@ -2,12 +2,16 @@
   <div class="signin-container">
     <div class="signin-wrapper">
       <div class="signin-img">
-        <img src="~/assets/login.png" alt="" />
+        <img src="~/assets/achievement-pana.png" alt="" />
       </div>
       <div class="signin-img-right">
-        <img src="~/assets/login.png" alt="" />
+        <img src="~/assets/achievement-pana.png" alt="" />
       </div>
-      <h1>sign in to affiliate market place</h1>
+      <h1>Book an appointment with me</h1>
+      <p>
+        Get the opportunity to meet with one in person or get a one of one
+        online session with me.
+      </p>
       <div class="signin-form">
         <div class="form-wrapper">
           <div class="input">
@@ -20,23 +24,19 @@
             />
           </div>
           <div class="input">
-            <label for="password">password:</label
-            ><input
-              id="password"
-              type="password"
-              v-model="user.password"
-              placeholder="Enter password..."
-            />
+            <label for="message">Reason for appointment</label
+            ><textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder=" Reason for appointment"
+            ></textarea>
           </div>
+
           <button @click="signinFunc(user.email, user.password)">
-            sign in
+            book appointment
           </button>
-          <div class="links">
-            <nuxtLink to="/signup"
-              >Don't have an account yet? <span>sign up</span>
-            </nuxtLink>
-            <nuxtLink to="/forgot_password">forgot password ?</nuxtLink>
-          </div>
         </div>
       </div>
     </div>
@@ -44,24 +44,39 @@
 </template>
 
 <script setup>
-// import axios from "axios";
+import axios from "axios";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 const user = reactive({
   email: "",
   password: "",
 });
 
-const signinFunc = (email, password) => {
-  navigateTo("/dashboard/");
+function signinFunc() {
+  axios
+    .post("/login", user)
+    .then((res) => {
+      console.log(res);
+      if (res.statusText === "OK" || res.status === 200 || res.status === 201) {
+        localStorage.setItem("accessId", res.data.accessId);
 
-  console.log(email, password);
-  // axios
-  //   .post("http://localhost:3003/api/login", {
-  //     email,
-  //     password,
-  //   })
-  //   .then((res) => )
-  //   .catch((err) => console.log(err));
-};
+        localStorage.setItem("userId", res.data.username);
+
+        localStorage.setItem("accessToken", res.data.accessToken);
+        axios.defaults.headers.common[
+          "Authorization"
+        ] = `Bearer ${localStorage.getItem("accessToken")}`;
+
+        router.push("/");
+      } else {
+        console.log(res);
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
 </script>
 
 <style lang="scss" scoped>
@@ -84,11 +99,25 @@ const signinFunc = (email, password) => {
       position: relative;
       width: 500px;
       margin: 0 auto;
+      color: rgb(37, 97, 89);
 
       @media screen and (max-width: 600px) {
         width: 80%;
         text-align: left;
         padding: 0;
+      }
+    }
+
+    p {
+      text-align: center;
+      width: 500px;
+      padding: 10px;
+      margin: 0 auto;
+      color: rgb(37, 97, 89);
+
+      @media screen and (max-width: 600px) {
+        width: 80%;
+        text-align: left;
       }
     }
 
@@ -130,6 +159,7 @@ const signinFunc = (email, password) => {
       width: 100%;
       height: fit-content;
       position: relative;
+      margin-bottom: 30px;
       .form-wrapper {
         width: 500px;
         height: fit-content;
@@ -138,23 +168,31 @@ const signinFunc = (email, password) => {
 
         .input {
           width: 100%;
-          height: 50px;
-          margin: 40px auto;
+          height: fit-content;
+          margin: 30px auto;
 
           label {
             text-transform: capitalize;
             padding: 5px 0;
             display: block;
             font-weight: 500;
+            color: rgb(37, 97, 89);
           }
-          input {
+          input,
+          textarea {
             width: 100%;
             height: 45px;
             outline: none;
             padding: 0 17px;
             border: none;
             outline: none;
-            border: 1px solid rgb(215, 225, 223);
+            box-shadow: 0 3px 16px 1px rgba(85, 92, 91, 0.497);
+            border: 1px solid rgb(228, 232, 232);
+            color: rgb(37, 97, 89);
+          }
+          textarea {
+            height: fit-content;
+            padding: 20px;
           }
         }
         button {

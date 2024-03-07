@@ -2,7 +2,7 @@
   <div class="contact-container" id="contact-container">
     <div class="wrapper">
       <div class="image-content">
-        <img src="~/assets/images-removebg-preview.png" alt="" />
+        <img src="~/assets/gospel.png" alt="" />
       </div>
       <p>want to link up with us? check out our social media links below...</p>
       <hr />

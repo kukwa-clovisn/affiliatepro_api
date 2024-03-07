@@ -14,14 +14,14 @@
           data-aos="fade-up"
         >
           <div class="image">
-            <img src="~/assets/images-removebg-preview.png" alt="" />
+            <img src="~/assets/gospel.png" alt="" />
           </div>
           <div class="content-body">
             <h2 data-aos="slide-up">John {{ index }} Doe</h2>
             <p data-aos="fade-up">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-              commodi, ab voluptatum vel inventore eveniet reiciendis labore
-              ipsum accusantium obcaecati consectetur magnam praesentium nemo.
+              this is a testimonial content based on the services received from
+              the serviced. This carries more truth about business deals and
+              transaction transparency and many lot more.
             </p>
           </div>
         </div>

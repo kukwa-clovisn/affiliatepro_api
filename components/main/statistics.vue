@@ -1,15 +1,14 @@
 <template>
   <div class="statistics">
     <div class="wrapper">
-      <div
-        class="content"
-        data-aos="slide-up"
-        v-for="(item, index) in ['students', 'courses', 'mentors']"
-        :key="item"
-      >
-        <p data-aos="zoom-in">
-          {{ 10 + index }}k + <span>{{ item }}</span>
-        </p>
+      <div class="content" data-aos="slide-up">
+        <p data-aos="zoom-in">100 + <span>students</span></p>
+      </div>
+      <div class="content" data-aos="slide-up">
+        <p data-aos="zoom-in">50+ <span>courses</span></p>
+      </div>
+      <div class="content" data-aos="slide-up">
+        <p data-aos="zoom-in">100 + <span>videos</span></p>
       </div>
     </div>
   </div>

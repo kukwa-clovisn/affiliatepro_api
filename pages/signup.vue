@@ -53,9 +53,7 @@
               </div>
             </div>
           </div>
-          <button @click="signupFunc(user.username, user.email, user.password)">
-            create account
-          </button>
+          <button @click="signupFunc()">create account</button>
           <div class="links">
             <nuxtLink to="/signin"
               >Already have an account ? <span>signin</span>
@@ -79,22 +77,25 @@ const status = reactive({
   password: false,
 });
 
-const signupFunc = (username, email, password) => {
-  status.username = true ? username === "" : (status.username = false);
-  status.email = true ? email === "" : (status.email = false);
-  status.password = true ? password === "" : (status.password = false);
-
-  // axios
-  //   .post("http://localhost:3003/api/signup", {
-  //     username,
-  //     email,
-  //     password,
-  //   })
-  //   .then((res) => {
-  //     console.log(res);
-  //   })
-  //   .catch((err) => console.log(err));
-};
+function signupFunc() {
+  if (
+    user.username.length >= 3 &&
+    user.email.length >= 8 &&
+    user.password.length >= 4
+  ) {
+    axios
+      .post("/signup", user)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err.response.data.msg);
+      });
+  } else {
+    alert("invalid credentials");
+  }
+}
 </script>
 
 <style lang="scss" scoped>

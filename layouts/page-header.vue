@@ -2,12 +2,11 @@
   <div :class="[{ squeezeHeader: stickyHeader }, 'header-component']">
     <div class="header-wrapper">
       <div class="header-logo">
-        <div class="header-logo-wrapper">Affiliate <span>pro</span></div>
+        <div class="header-logo-wrapper">Gospelfx <span>trader</span></div>
       </div>
       <div class="header-items">
         <div class="header-items-list">
           <nuxtLink to="/">Home</nuxtLink>
-          <!-- <nuxtLink to="/">About Us</nuxtLink> -->
           <a href="/#about-container">about us</a>
           <a href="/#courses-container">Courses</a>
           <nuxtLink to="/#contact-container">Contacts</nuxtLink>
@@ -15,7 +14,7 @@
       </div>
       <div class="header-contact">
         <button>
-          <nuxt-link to="/signin">signin</nuxt-link>
+          <nuxt-link to="/signin">appointment</nuxt-link>
         </button>
       </div>
       <div class="menu-div">
@@ -42,7 +41,7 @@ const toggleMenu = useMenuState();
   height: fit-content;
   display: flex;
   justify-content: center;
-  background: rgb(13, 58, 99);
+  background: rgb(37, 97, 89);
   background: rgb(234, 246, 236);
   background: transparent;
   position: fixed;
@@ -57,7 +56,7 @@ const toggleMenu = useMenuState();
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
-    background: white;
+    background: rgb(255, 255, 255);
     box-shadow: 0 0 6px 1px rgb(205, 205, 205);
 
     .header-logo {
@@ -132,6 +131,7 @@ const toggleMenu = useMenuState();
           align-items: center;
           text-decoration: none;
           color: rgb(43, 42, 42);
+          color: rgb(28, 79, 72);
           text-transform: uppercase;
           font-family: Montserrat, sans-serif;
           font-weight: bold;
@@ -227,9 +227,11 @@ const toggleMenu = useMenuState();
   top: 0;
   left: 0;
   z-index: 1;
-
+  padding-top: 0;
   .header-wrapper {
     height: 11vh;
+    width: 100%;
+    border-radius: 0;
   }
 }
 </style>

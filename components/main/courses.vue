@@ -2,37 +2,28 @@
   <div class="courses-container" id="courses-container">
     <div class="courses-wrapper">
       <h2 data-aos="zoom-in">
-        Find Your perfect <span>Digital Marketing</span>course(s)
+        Find Your perfect <span>Forex Trading</span> course(s)
         <hr data-aos="fade-up" />
       </h2>
-
-      <p data-aos="fade-up">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam corrupti
-        error impedit et, non minus temporibus delectus. Quaerat, ex.
-      </p>
 
       <div class="course-list">
         <div
           class="course"
-          v-for="(course, index) in 4"
+          v-for="(course, index) in 3"
           :key="course"
           data-aos="fade-up"
         >
           <div class="course-img">
             <img src="~/assets/group.jpeg" alt="" />
           </div>
-          <h3>digital marketting {{ index + 1 }}</h3>
+          <h3>forex trading {{ index }}</h3>
 
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur
-            totam reiciendis aliquam assumenda fugiat explicabo recusandae sit.
+            this is how our coures are structured to help see you go through
+            your learning process with eaese
           </p>
-          <div class="buttons">
-            <button>
-              <i class="fa-regular fa-circle-play"></i>start course</button
-            ><button>learn more</button>
-          </div>
-          <div class="follow">Lorem ipsum dolor sit amet.</div>
+
+          <div class="follow">find out more about me</div>
         </div>
       </div>
     </div>
@@ -56,6 +47,10 @@
       text-transform: uppercase;
       font-family: Montserrat, sans-serif;
       font-size: 23px;
+
+      span {
+        color: rgb(230, 89, 7);
+      }
     }
 
     p {
@@ -77,19 +72,21 @@
       .course {
         width: 300px;
         height: 400px;
-        box-shadow: 0 0 17px 1px rgb(214, 214, 214);
+        // box-shadow: 0 0 17px 1px rgb(214, 214, 214);
         border-radius: 3px;
-        background: white;
+        // background: white;
         overflow: hidden;
 
         .course-img {
-          width: 100%;
+          width: 150px;
           height: 150px;
+          border-radius: 100%;
           display: flex;
           justify-content: center;
           align-items: center;
           overflow: hidden;
-
+          margin: 10px auto;
+          box-shadow: 0 0 17px 1px rgb(147, 146, 146);
           img {
             height: 100%;
             width: 100%;
@@ -97,50 +94,18 @@
           }
         }
         h3 {
-          text-align: left;
+          text-align: center;
           text-transform: uppercase;
           padding: 0 20px;
           font-size: 16px;
+          font-weight: 500;
         }
         p {
-          text-align: left;
+          text-align: center;
           padding: 4px 20px;
           font-size: 13px;
         }
-        .buttons {
-          width: 100%;
-          height: fit-content;
-          display: flex;
-          justify-content: center;
-          align-items: flex-start;
-          flex-wrap: wrap;
-          gap: 20px;
-          margin: 10px auto;
 
-          button {
-            width: 40%;
-            height: 45px;
-            border: none;
-            border-radius: 5px;
-            background: linear-gradient(
-              to right,
-              rgb(253, 147, 1),
-              rgb(255, 82, 22)
-            );
-            color: white;
-            text-transform: capitalize;
-            font-weight: 600;
-
-            i {
-              padding-right: 6px;
-              color: white;
-            }
-
-            &:last-child {
-              background: rgb(37, 97, 89);
-            }
-          }
-        }
         .follow {
           padding-top: 5px;
           border-top: 1px solid rgb(164, 163, 163);
@@ -172,6 +137,40 @@
                 }
               }
             }
+          }
+        }
+      }
+      .buttons {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 10px auto;
+
+        button {
+          width: 40%;
+          height: 45px;
+          border: none;
+          border-radius: 5px;
+          background: linear-gradient(
+            to right,
+            rgb(253, 147, 1),
+            rgb(255, 82, 22)
+          );
+          color: white;
+          text-transform: capitalize;
+          font-weight: 600;
+
+          i {
+            padding-right: 6px;
+            color: white;
+          }
+
+          &:last-child {
+            background: rgb(37, 97, 89);
           }
         }
       }

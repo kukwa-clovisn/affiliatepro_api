@@ -51,6 +51,10 @@ useHead({
 });
 
 const toggleMenu = useMenuState();
+
+// console.log("page height", docHeight);
+// const percentageScrolled = (window.scrollY / docHeight) * 100;
+// console.log("percentageScrolled");
 </script>
 
 <style lang="scss" >
@@ -58,6 +62,7 @@ body,
 * {
   box-sizing: border-box;
   color: rgb(31, 32, 33);
+  color: rgb(5, 43, 39);
 }
 
 .blur-wrapper {

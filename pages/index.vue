@@ -4,19 +4,22 @@
       <div class="landing-page-wrapper">
         <div class="image-content">
           <div class="img">
-            <img src="~/assets/images-removebg-preview.png" alt="" />
+            <img src="~/assets/gospel.png" alt="" />
           </div>
         </div>
         <div class="page-content">
-          <h1>
-            <span>Digital marketing</span> made <span>easy</span> and
-            <span>accessible</span> for everyone...
-          </h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-            nesciunt mollitia velit accusantium quod non reiciendis inventore
-            explicabo reprehenderit asperiores, illo repellendus magni!
-          </p>
+          <h1>Hi i'm <span>Gospel Yong. </span><br /></h1>
+          <div class="listings">
+            <h2>i'm a</h2>
+            <div class="list-div">
+              <ul>
+                <li>forex trader.....</li>
+                <li>civil engineer.....</li>
+                <li>youtuber..........</li>
+              </ul>
+            </div>
+          </div>
+          <p>Welcome to my space</p>
           <div class="page-buttons">
             <button>
               <nuxt-link to="/signin"
@@ -30,28 +33,46 @@
         </div>
       </div>
     </div>
+
     <MainStatistics />
     <MainCourseDesign />
     <div class="about-container" id="about-container">
       <div class="about-wrapper">
         <div class="image-content">
-          <img src="~/assets/hgju.png" alt="" />
+          <img src="~/assets/gospel.png" alt="" />
         </div>
         <div class="blur-wrapper"></div>
         <div class="about-us">
-          <h1>about <span>us</span></h1>
+          <h1>about <span>me</span></h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum,
-            tempore nemo eum deleniti fugiat eveniet esse quisquam maiores sit
-            alias? Et, quod pariatur? Rerum eaque et aperiam, reiciendis cum
-            excepturi, temporibus tempora non ab consequatur dolorum eius quae
-            dolores eligendi repudiandae velit alias atque.
+            I'm a professional forex trader with 6years of experience and also a
+            funded trader with multiple prop firms.
           </p>
-          <button data-aos="fade-up">contact us</button>
+          <p>
+            I'm a mentor and CEO of jugosfx academy I mentor and follow up my
+            mentees till there are profitable Benefits Offering a 1 on 1
+            mentorship to help slow learners pick up I trained from novis to pro
+            traders helping traders with most of their trading challenges
+            psychologically and technically
+          </p>
+          <button data-aos="zoom-in">learn more</button>
         </div>
       </div>
     </div>
     <MainCourses />
+    <div class="video-content">
+      <div class="video-wrapper">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/PsFhqfKrFu4?si=MtvDKx9X1jjJ1Rov"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
     <mainTestimonials />
     <div class="subscriber-container">
       <div class="subscriber-wrapper">
@@ -130,20 +151,111 @@ hr {
         height: fit-content;
 
         h1 {
-          font-size: 45px;
+          font-size: 40px;
           line-height: 50px;
-          color: rgb(37, 36, 36);
+          color: rgb(37, 97, 89);
           text-align: left;
-          font-weight: 700;
-          text-transform: capitalize;
+          font-weight: 600;
 
           span {
             color: rgb(255, 82, 22);
+            font-size: 40px;
+            text-transform: uppercase;
           }
         }
 
+        .listings {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          flex-direction: column;
+          flex-direction: row;
+          gap: 20px;
+
+          h2 {
+            text-transform: uppercase;
+            color: rgb(37, 97, 89);
+          }
+
+          .list-div {
+            position: relative;
+            height: 50px;
+            width: 230px;
+            overflow: hidden;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            ul {
+              width: 100%;
+              list-style-type: none;
+              position: absolute;
+              animation: skip 12s steps(3) infinite;
+              top: 0;
+              left: 0;
+              margin: 0;
+              display: flex;
+              justify-content: center;
+              align-items: flex-start;
+              flex-direction: column;
+              padding: 0;
+
+              li {
+                text-transform: uppercase;
+                font-size: 23px;
+                height: 50px;
+                width: 100%;
+                display: flex;
+                text-align: left;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 0;
+                margin: 0;
+                color: rgb(37, 97, 89);
+                font-weight: 800;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+              }
+            }
+            &::before {
+              content: " ";
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              background: rgb(234, 246, 236);
+              animation: list 2s infinite alternate linear forwards;
+
+              border-left: 4px solid darkgreen;
+
+              z-index: 1;
+            }
+          }
+
+          @keyframes list {
+            from {
+              left: 0;
+            }
+            to {
+              left: 100%;
+            }
+          }
+        }
+
+        @keyframes skip {
+          from {
+            top: 0;
+          }
+          to {
+            top: -150px;
+          }
+        }
         p {
           text-align: left;
+          color: rgb(37, 97, 89);
         }
 
         .page-buttons {
@@ -189,51 +301,51 @@ hr {
             }
           }
         }
-      }
 
-      @media screen and (max-width: 1000px) {
-        width: 90%;
+        @media screen and (max-width: 1000px) {
+          width: 90%;
 
-        @media screen and (max-width: 800px) {
-          justify-content: center;
-          height: fit-content;
-          .image-content {
-            display: none;
-          }
-
-          .page-content {
-            width: 90%;
-
-            h1,
-            p {
-              text-align: center;
-              padding: 12px;
-              line-height: 1.4em;
+          @media screen and (max-width: 800px) {
+            justify-content: center;
+            height: fit-content;
+            .image-content {
+              display: none;
             }
 
-            .page-buttons {
-              justify-content: center;
-              gap: 30px;
-              flex-wrap: wrap;
-            }
-          }
-          @media screen and (max-width: 600px) {
             .page-content {
-              h1 {
-                font-size: 40px;
-              }
+              width: 90%;
+
+              h1,
               p {
-                font-size: 20px;
+                text-align: center;
+                padding: 12px;
+                line-height: 1.4em;
               }
 
-              @media screen and (max-width: 450px) {
+              .page-buttons {
+                justify-content: center;
+                gap: 30px;
+                flex-wrap: wrap;
+              }
+            }
+            @media screen and (max-width: 600px) {
+              .page-content {
                 h1 {
-                  font-size: 35px;
+                  font-size: 40px;
+                }
+                p {
+                  font-size: 20px;
                 }
 
-                .page-buttons {
-                  button {
-                    width: 80%;
+                @media screen and (max-width: 450px) {
+                  h1 {
+                    font-size: 35px;
+                  }
+
+                  .page-buttons {
+                    button {
+                      width: 80%;
+                    }
                   }
                 }
               }
@@ -249,18 +361,23 @@ hr {
     height: 80vh;
     display: flex;
     align-items: flex-end;
-    padding: 20px 0;
+    padding: 30px 0;
+
+    background: linear-gradient(to right, rgb(37, 97, 89), rgb(50, 168, 152));
+    // border-radius: 0 0 10% 10%;
 
     .about-wrapper {
       width: 80%;
-      height: 300px;
+      height: fit-content;
       background: rgb(37, 97, 89);
+      background: linear-gradient(to right, rgb(37, 97, 89), rgb(50, 168, 152));
       margin: 20px auto;
       display: flex;
       justify-content: center;
       align-items: flex-start;
       border-radius: 15px;
       position: relative;
+      box-shadow: -3px 3px 13px 2px rgba(1, 49, 34, 0.807);
 
       .image-content {
         width: 35%;
@@ -324,7 +441,7 @@ hr {
         p {
           text-align: left;
           color: rgb(232, 232, 232);
-          font-size: 14px;
+          font-size: 16px;
           line-height: 24px;
         }
         button {
@@ -405,6 +522,26 @@ hr {
     }
   }
 
+  .video-content {
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+
+    .video-wrapper {
+      width: 100%;
+      height: fit-content;
+      margin: 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      iframe {
+        width: 100%;
+        height: 500px;
+        margin: 0;
+      }
+    }
+  }
   .subscriber-container {
     width: 100%;
     height: fit-content;

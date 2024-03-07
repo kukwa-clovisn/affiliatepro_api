@@ -2,17 +2,20 @@
   <footer>
     <div class="wrapper">
       <div class="logo">
-        <h1>affiliate<span>pro</span></h1>
+        <h1>gospelfx<span>trader</span></h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-          corrupti.
+          I'm a mentor and CEO of jugosfx academy I mentor and follow up my
+          mentees till there are profitable Benefits Offering a 1 on 1
+          mentorship to help slow learners pick up I trained from novis to pro
+          traders helping traders with most of their trading challenges
+          psychologically and technically
         </p>
       </div>
       <div class="links">
         <div class="wrapper">
           <div class="link"><a href="/#about-container">about us</a></div>
           <div class="link"><a href="/#courses-container">courses</a></div>
-          <div class="link"><a href="#contact-container">contacts</a></div>
+          <div class="link"><a href="/#contact-container">contacts</a></div>
         </div>
       </div>
       <div class="contacts">contacts</div>
@@ -26,6 +29,7 @@ footer {
   width: 100vw;
   height: fit-content;
   background: rgb(17, 27, 26);
+  background: rgb(37, 97, 89);
 
   .wrapper {
     width: 90%;
@@ -37,7 +41,7 @@ footer {
     align-items: flex-start;
 
     .logo {
-      width: 20%;
+      width: 40%;
 
       h1 {
         color: white;
@@ -49,13 +53,14 @@ footer {
       }
       p {
         color: rgb(232, 231, 231);
-        font-size: 11px;
+        font-size: 13px;
+        line-height: 17px;
         text-align: left;
       }
     }
 
     .links {
-      width: 55%;
+      width: 20%;
       height: fit-content;
 
       .wrapper {
@@ -63,7 +68,9 @@ footer {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        flex-direction: column;
         flex-wrap: wrap;
+        gap: 20px;
 
         .link {
           a {
@@ -80,7 +87,7 @@ footer {
       }
     }
     .contacts {
-      width: 25%;
+      width: 40%;
       height: fit-content;
       color: white;
     }

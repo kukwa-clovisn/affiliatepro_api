@@ -34,6 +34,10 @@
         optio dolorum ipsa!
       </p>
       <MainStatistics />
+      <iframe
+        src="https://youtu.be/1m2wsdm5bVA?si=6c_02122VJhqCwzd"
+        frameborder="0"
+      ></iframe>
     </div>
   </div>
 </template>
