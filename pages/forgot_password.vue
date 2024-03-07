@@ -1,10 +1,15 @@
 <template>
-  <div class="signin-container">
-    <div class="signin-wrapper">
+  <div class="fpassword-container">
+    <div class="fpassword-wrapper">
       <h1>Forgot your password??</h1>
       <p>Let us help you recover your account...</p>
-
-      <div class="signin-form">
+      <div class="fpassword-img">
+        <img src="~/assets/auth.png" alt="" />
+      </div>
+      <div class="fpassword-img-right">
+        <img src="~/assets/auth.png" alt="" />
+      </div>
+      <div class="fpassword-form">
         <div class="form-wrapper">
           <div class="input">
             <label for="email">Email address:</label
@@ -27,11 +32,11 @@
 </template>
 
 <style lang="scss" scoped>
-.signin-container {
+.fpassword-container {
   width: 100%;
   height: fit-content;
   background: rgb(234, 246, 236);
-  .signin-wrapper {
+  .fpassword-wrapper {
     width: 100%;
     height: fit-content;
     padding-top: 18vh;
@@ -46,7 +51,41 @@
       text-align: center;
       margin: 5px auto;
     }
-    .signin-form {
+
+    .fpassword-img,
+    .fpassword-img-right {
+      width: fit-content;
+      height: fit-content;
+      position: absolute;
+      bottom: 15%;
+      left: 2%;
+
+      .blur-wrapper {
+        opacity: 0.3;
+      }
+
+      img {
+        width: 300px;
+        object-fit: contain;
+      }
+
+      @media screen and (max-width: 1050px) {
+        bottom: 15%;
+
+        img {
+          width: 200px;
+        }
+
+        @media screen and (max-width: 1000px) {
+          display: none;
+        }
+      }
+    }
+
+    .fpassword-img-right {
+      left: 75%;
+    }
+    .fpassword-form {
       width: 100%;
       height: fit-content;
 

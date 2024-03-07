@@ -2,10 +2,10 @@
   <div class="signin-container">
     <div class="signin-wrapper">
       <div class="signin-img">
-        <img src="~/assets/login_icon.png" alt="" />
+        <img src="~/assets/achievement-pana.png" alt="" />
       </div>
       <div class="signin-img-right">
-        <img src="~/assets/login_icon.png" alt="" />
+        <img src="~/assets/achievement-pana.png" alt="" />
       </div>
       <h1>Book an appointment with me</h1>
       <p>
@@ -24,24 +24,19 @@
             />
           </div>
           <div class="input">
-            <label for="email">password:</label
-            ><input
-              id="password"
-              type="password"
-              v-model="user.password"
-              placeholder="Enter password..."
-            />
+            <label for="message">Reason for appointment</label
+            ><textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder=" Reason for appointment"
+            ></textarea>
           </div>
 
           <button @click="signinFunc(user.email, user.password)">
-            Get access to free courses
+            book appointment
           </button>
-          <div class="links">
-            <nuxtLink to="/signup"
-              >Already have an account ? <span>singup</span>
-            </nuxtLink>
-            <nuxtLink to="/forgot_password">forgot password</nuxtLink>
-          </div>
         </div>
       </div>
     </div>

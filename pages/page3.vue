@@ -13,7 +13,7 @@
         </p>
         <div class="page-buttons">
           <button>
-            <nuxt-link to="/landing-pages/page1"
+            <nuxt-link to="/page2"
               ><i class="fa-regular fa-circle-right"></i>learn more</nuxt-link
             ></button
           ><button><i class="fa-regular fa-circle-play"></i>watch video</button>

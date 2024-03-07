@@ -2,7 +2,9 @@
   <div class="signin-container">
     <div class="signin-wrapper">
       <div class="signup-img"><img src="~/assets/sign-up.png" alt="" /></div>
-      <h1>signup to affiliate market place</h1>
+      <h1>
+        signup to <span>gospelfx<span>trader</span></span> mentorship
+      </h1>
 
       <div class="signin-form">
         <div class="form-wrapper">
@@ -128,6 +130,15 @@ function signupFunc() {
       position: relative;
       width: 500px;
       margin: 0 auto;
+      color: rgb(42, 81, 76);
+
+      span {
+        color: rgb(42, 81, 76);
+
+        span {
+          color: rgb(253, 147, 1);
+        }
+      }
 
       @media screen and (max-width: 600px) {
         width: 80%;

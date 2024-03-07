@@ -22,12 +22,15 @@
           <p>Welcome to my space</p>
           <div class="page-buttons">
             <button>
-              <nuxt-link to="/signin"
-                ><i class="fa-regular fa-circle-right"></i>Get
-                started</nuxt-link
+              <nuxt-link to="/signup"
+                ><i class="fa-regular fa-circle-right"></i>join
+                mentorship</nuxt-link
               ></button
             ><button>
-              <i class="fa-regular fa-circle-play"></i>watch video
+              <nuxt-link to="/signin"
+                ><i class="fa-regular fa-circle-right"></i>free
+                courses</nuxt-link
+              >
             </button>
           </div>
         </div>
@@ -36,7 +39,7 @@
 
     <MainStatistics />
     <MainCourseDesign />
-    <div class="about-container" id="about-container">
+    <div class="about-container" id="about-us">
       <div class="about-wrapper">
         <div class="image-content">
           <img src="~/assets/gospel.png" alt="" />
@@ -363,34 +366,44 @@ hr {
     align-items: flex-end;
     padding: 30px 0;
 
-    background: linear-gradient(to right, rgb(37, 97, 89), rgb(50, 168, 152));
+    background: linear-gradient(
+      to bottom,
+      rgb(37, 97, 89),
+      rgb(50, 168, 152),
+      rgba(50, 168, 152, 0)
+    );
     // border-radius: 0 0 10% 10%;
 
     .about-wrapper {
       width: 80%;
-      height: fit-content;
+      height: 400px;
       background: rgb(37, 97, 89);
-      background: linear-gradient(to right, rgb(37, 97, 89), rgb(50, 168, 152));
+      background: linear-gradient(
+        to bottom,
+        rgb(37, 97, 89),
+        rgb(50, 168, 152)
+      );
       margin: 20px auto;
       display: flex;
       justify-content: center;
       align-items: flex-start;
       border-radius: 15px;
       position: relative;
-      box-shadow: -3px 3px 13px 2px rgba(1, 49, 34, 0.807);
+      box-shadow: -3px -3px 8px 1px rgba(1, 49, 34, 0.807);
 
       .image-content {
         width: 35%;
         height: 100%;
         position: relative;
+        overflow: hidden;
 
         img {
-          width: 250px;
-          height: auto;
+          width: auto;
+          height: 440px;
           cursor: pointer;
-          position: absolute;
-          top: -14%;
-          left: 10%;
+          // position: absolute;
+          // top: -14%;
+          // left: 10%;
           object-fit: contain;
         }
       }
