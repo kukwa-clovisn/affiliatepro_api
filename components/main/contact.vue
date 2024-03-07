@@ -4,13 +4,13 @@
       <div class="image-content">
         <img src="~/assets/gospel.png" alt="" />
       </div>
-      <p>want to link up with us? check out our social media links below...</p>
+      <p>want to link up with me? check out our social media links below...</p>
       <hr />
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero facere
         magni adipisci architecto aperiam dolorum.
       </p>
-      <p>Get to us on whatsapp</p>
+      <p>Get to me on whatsapp</p>
       <a href="#" class="whatsapp">start whatsapp chat</a>
 
       <div class="links">
@@ -119,6 +119,7 @@
           font-weight: 600;
           text-transform: capitalize;
           color: rgb(21, 120, 120);
+          cursor: pointer;
         }
       }
     }

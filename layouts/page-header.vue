@@ -7,14 +7,14 @@
       <div class="header-items">
         <div class="header-items-list">
           <nuxtLink to="/">Home</nuxtLink>
-          <a href="/#about-container">about us</a>
-          <a href="/#courses-container">Courses</a>
+          <a href="/#about-us">about us</a>
+          <a href="/#courses">Courses</a>
           <nuxtLink to="/#contact-container">Contacts</nuxtLink>
         </div>
       </div>
       <div class="header-contact">
         <button>
-          <nuxt-link to="/signin">appointment</nuxt-link>
+          <nuxt-link to="/appointment">appointment</nuxt-link>
         </button>
       </div>
       <div class="menu-div">
