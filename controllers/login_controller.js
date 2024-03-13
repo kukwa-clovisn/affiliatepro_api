@@ -1,6 +1,4 @@
-const userModel = require("../Database/models/users");
-
-const capitalizeUserName = require("../middlewares/capitalize");
+const userModel = require("../models/users");
 
 const userToken = require("../utils/jwt");
 
@@ -11,13 +9,14 @@ const jwt = require("jsonwebtoken");
 module.exports = {
   post: async (req, res) => {
     try {
-      // let findUserEmail = capitalizeUserName(req.body.username);
       const findUserEmail = req.body.email;
 
       const data = await userModel.findOne({
         email: findUserEmail,
       });
-      // id the user is not logged in,
+
+      console.log(data);
+      // if the user is not signed in,
       if (!data)
         return res.status(403).json({
           msg: `user ${findUserEmail} has no account.`,
@@ -38,10 +37,9 @@ module.exports = {
       let accessToken = userToken.createUserToken(req.body);
 
       return res.status(200).json({
-        username: data.username,
         email: data.email,
         accessId: data._id,
-        msg: "Loading courses...",
+        msg: "login successful",
         accessToken,
       });
     } catch (error) {

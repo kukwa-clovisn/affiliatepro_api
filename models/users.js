@@ -1,4 +1,4 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema(
   {
@@ -13,18 +13,6 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
-    },
-    referralCode: {
-      type: String,
-      required: true,
-    },
-    wishlist: {
-      type: Array,
-      required: false,
-    },
-    referrals: {
-      type: Array,
-      required: false,
     },
   },
   {

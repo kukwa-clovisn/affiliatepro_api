@@ -1,9 +1,8 @@
 const express = require("express");
-const userModel = require("../Database/models/users");
+const userModel = require("../models/users");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  //   console.log(req.ip);
   const users = await userModel.find({});
 
   return res.status(200).json(users)
