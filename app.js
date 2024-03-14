@@ -76,7 +76,7 @@ app.use(
 );
 
 app.use("/", (req, res) => {
-  res.send("dklfjaldkfad");
+  res.send("Gospelfxtrader-api");
 });
 
 // api listening only when the database is fully connected...

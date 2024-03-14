@@ -20,18 +20,13 @@ module.exports = {
         for (let i = 0; i < checkError.errors.length; i++) {
           msg += checkError.errors[i].msg;
         }
-
-        res.status(401).json({
-          msg,
+        console.log(msg);
+        return res.status(401).json({
+          msg: `${msg}.Please check your signup credentials...`,
         });
       }
 
       let newEmail = req.body.email;
-
-      if (req.body.password.length < 4)
-        return res.status(401).json({
-          msg: "invalid password",
-        });
 
       /**
        * checking if a user already exist with the same email
@@ -78,7 +73,7 @@ module.exports = {
           Messages: [
             {
               From: {
-                Email: "kukwaclovisngong3@gmail.com",
+                Email: "yonggospel@gmail.com",
                 Name: "Gospelfxtrader",
               },
               To: [
