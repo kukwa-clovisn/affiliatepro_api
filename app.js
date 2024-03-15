@@ -44,6 +44,7 @@ const userRoute = require("./routes/user");
 const tokenRoute = require("./routes/token");
 const courseRoute = require("./routes/course");
 const appointmentRoute = require("./routes/appointment");
+const subscribeRoute = require("./routes/subscribe");
 
 // api route configurations
 app.use(
@@ -64,6 +65,11 @@ app.use(
     body("password").isLength({ min: 6 }),
   ],
   signupRoute
+);
+app.use(
+  "/api/subscribe",
+  [body("email").isEmail().normalizeEmail()],
+  subscribeRoute
 );
 
 app.use("/api/users", userRoute);
