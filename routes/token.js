@@ -24,15 +24,11 @@ router.get("/", (req, res) => {
         msg: "token expired",
       });
 
-    console.log(data);
-
     let userEmail = data.email;
 
     const user = await userModel.findOne({
       email: userEmail,
     });
-
-    console.log(user);
 
     if (!user) {
       return res.status(403).json({ msg: "Access Denied" });

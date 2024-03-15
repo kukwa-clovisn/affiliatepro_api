@@ -20,7 +20,6 @@ router.post("/", async (req, res) => {
     for (let i = 0; i < checkError.errors.length; i++) {
       msg += checkError.errors[i].msg;
     }
-    console.log(msg);
     return res.status(401).json({
       msg,
     });

@@ -20,7 +20,6 @@ module.exports = {
         for (let i = 0; i < checkError.errors.length; i++) {
           msg += checkError.errors[i].msg;
         }
-        console.log(msg);
         return res.status(401).json({
           msg: `${msg}.Please check your signup credentials...`,
         });

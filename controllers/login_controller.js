@@ -15,7 +15,6 @@ module.exports = {
         email: findUserEmail,
       });
 
-      console.log(data);
       // if the user is not signed in,
       if (!data)
         return res.status(403).json({
@@ -43,7 +42,6 @@ module.exports = {
         accessToken,
       });
     } catch (error) {
-      console.log(error);
       return res.status(500).json({ error });
     }
   },
