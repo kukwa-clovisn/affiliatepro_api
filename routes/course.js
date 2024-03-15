@@ -18,7 +18,19 @@ router.post("/create-course", async (req, res) => {
 });
 router.post("/some", async (req, res) => {
   const courseName = req.body.courseName;
+  console.log(req.body);
   const courseData = await courseModel.find({ courseName: courseName });
+
+  if (!courseData) return res.status(404).json({ msg: "course not found" });
+
+  console.log(courseData);
+  return res.status(200).json(courseData);
+});
+
+router.post("/id", async (req, res) => {
+  const courseId = req.body.courseId;
+  console.log(req.body);
+  const courseData = await courseModel.find({ _id: courseId });
 
   if (!courseData) return res.status(404).json({ msg: "course not found" });
 
