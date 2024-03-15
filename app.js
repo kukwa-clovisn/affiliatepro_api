@@ -41,6 +41,8 @@ app.use(helmet());
 const loginRoute = require("./routes/login");
 const signupRoute = require("./routes/signup");
 const userRoute = require("./routes/user");
+const tokenRoute = require("./routes/token");
+const courseRoute = require("./routes/course");
 const appointmentRoute = require("./routes/appointment");
 
 // api route configurations
@@ -65,6 +67,8 @@ app.use(
 );
 
 app.use("/api/users", userRoute);
+app.use("/api/token", tokenRoute);
+app.use("/api/course", courseRoute);
 
 app.use(
   "/api/appointment",
