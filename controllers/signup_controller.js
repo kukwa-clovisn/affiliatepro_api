@@ -72,7 +72,7 @@ module.exports = {
           Messages: [
             {
               From: {
-                Email: "yonggospel@gmail.com",
+                Email: "kukwaclovisngong3@gmail.com",
                 Name: "Gospelfxtrader",
               },
               To: [
