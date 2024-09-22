@@ -45,6 +45,7 @@ const tokenRoute = require("./routes/token");
 const courseRoute = require("./routes/course");
 const appointmentRoute = require("./routes/appointment");
 const subscribeRoute = require("./routes/subscribe");
+const postRoute = require("./routes/post");
 
 // api route configurations
 app.use(
@@ -75,6 +76,7 @@ app.use(
 app.use("/api/users", userRoute);
 app.use("/api/token", tokenRoute);
 app.use("/api/course", courseRoute);
+app.use("/api/post", postRoute);
 
 app.use(
   "/api/appointment",
