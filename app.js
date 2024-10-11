@@ -52,7 +52,7 @@ app.use(
   "/api/signin",
   [
     // Example validation rules
-    body("email").isEmail().normalizeEmail(),
+    body("email").isEmail(),
     body("password").isLength({ min: 6 }),
   ],
   loginRoute
@@ -62,16 +62,12 @@ app.use(
   "/api/signup",
   [
     // Example validation rules
-    body("email").isEmail().normalizeEmail(),
+    body("email").isEmail(),
     body("password").isLength({ min: 6 }),
   ],
   signupRoute
 );
-app.use(
-  "/api/subscribe",
-  [body("email").isEmail().normalizeEmail()],
-  subscribeRoute
-);
+app.use("/api/subscribe", [body("email").isEmail()], subscribeRoute);
 
 app.use("/api/users", userRoute);
 app.use("/api/token", tokenRoute);
@@ -82,7 +78,7 @@ app.use(
   "/api/appointment",
   [
     // Example validation rules
-    body("email").isEmail().normalizeEmail(),
+    body("email").isEmail(),
   ],
   appointmentRoute
 );
