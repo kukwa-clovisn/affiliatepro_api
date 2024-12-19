@@ -83,7 +83,7 @@ module.exports = {
           <!-- Call-to-Action Button -->
           <tr>
             <td align="center" style="padding: 20px;">
-              <a href="https://gospelfxtrader.com" style="display: inline-block; padding: 12px 30px; background:rgb(1, 94, 111); color: #ffffff; text-decoration: none; font-size: 16px; border-radius: 4px;">Visit website</a>
+              <a href="https://advancedtechacademy.onrender.com" style="display: inline-block; padding: 12px 30px; background:rgb(1, 94, 111); color: #ffffff; text-decoration: none; font-size: 16px; border-radius: 4px;">Visit website</a>
             </td>
           </tr>
           <!-- Footer -->
