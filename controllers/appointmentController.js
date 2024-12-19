@@ -28,12 +28,12 @@ module.exports = {
           Messages: [
             {
               From: {
-                Email: "kukwaclovisngong3@gmail.com",
+                Email: "codingherald@gmail.com",
                 Name: "Gospelfxtrader",
               },
               To: [
                 {
-                  Email: "kcn.123.com@gmail.com",
+                  Email: "gospelfxconsultant@gmail.com",
                 },
               ],
               Subject: `${req.body.type}`,
